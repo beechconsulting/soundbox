@@ -25,6 +25,9 @@ public class SoundBoardActivity extends Activity {
     Map<Integer, Integer> buttonRawMap = new HashMap<Integer, Integer>();
     MediaPlayer mediaPlayer;
 
+    /*
+    Load the button resources into a map
+     */
     private void loadMap() {
         buttonRawMap.put(R.id.oh_billy, R.raw.oh_billy);
         buttonRawMap.put(R.id.baby_born, R.raw.baby_born);
@@ -119,6 +122,10 @@ public class SoundBoardActivity extends Activity {
     }
 
 
+    /**
+     * Play a clip. If a clip is playing, stop it, case statement to play the new clip
+     * @param view
+     */
     public void playClip(View view) {
         ImageButton b = (ImageButton) view;
         if (mediaPlayer != null && mediaPlayer.isPlaying()) {
